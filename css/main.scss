@@ -1,0 +1,151 @@
+$primary-color: black;
+$secondary-color: rgb(59, 154, 243);
+$third-color: rgb(78, 241, 78);
+
+@mixin togglePosition {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  transition: 0.5s;
+}
+
+@mixin togglePositionBefore {
+  position: absolute;
+  content: "";
+  bottom: 14px;
+  top: 8px;
+  transition: 0.5s;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: azure;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 55px;
+  margin-bottom: 30px;
+}
+
+.slider {
+  @include togglePosition;
+  border: 3px solid $primary-color;
+}
+
+.slider:before {
+  @include togglePositionBefore();
+  background-color: $primary-color;
+}
+
+.switch input {
+  display: none;
+}
+
+input:checked + .slider {
+  background-color: $primary-color;
+}
+
+input:checked + .slider:before {
+  transform: translateX(47px) rotateZ(45deg);
+  background: yellow;
+}
+
+.slider.round {
+  border-radius: 35px;
+}
+
+.slider.round:before {
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg);
+}
+
+// Second Toggle Button
+
+.slider2 {
+  @include togglePosition;
+  border: 3px solid $secondary-color;
+}
+
+.slider2:before {
+  @include togglePositionBefore();
+  background-color: $secondary-color;
+}
+
+.switch input {
+  display: none;
+}
+
+input:checked + .slider2 {
+  background-color: $secondary-color;
+}
+
+input:checked + .slider2:before {
+  transform: translateX(47px) rotateZ(45deg);
+  background: white;
+}
+
+.slider2.round2 {
+  border-radius: 35px;
+}
+
+.slider2.round2:before {
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg);
+}
+
+//Third Toggle Button
+.slider3 {
+  @include togglePosition;
+  border: 3px solid $third-color;
+}
+
+.slider3:before {
+  @include togglePositionBefore();
+  background-color: $third-color;
+}
+
+.switch input {
+  display: none;
+}
+
+input:checked + .slider3 {
+  background-color: $third-color;
+}
+
+input:checked + .slider3:before {
+  transform: translateX(47px) rotateZ(45deg);
+  background: white;
+}
+
+.slider3.round3 {
+  border-radius: 35px;
+}
+
+.slider3.round3:before {
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg);
+}
